@@ -14,7 +14,7 @@ typedef struct posicao {
 
 char** alocarMatriz(int Linhas,int Colunas);
 
-Labirinto * carrega_labirinto();
+Labirinto * carrega_labirinto(char* nmArq);
 
 Posicao * coordenada_inicial(Labirinto *lab);
 

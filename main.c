@@ -3,8 +3,8 @@
 #include "labirinto.h"
 
 
-Labirinto* carrega_labirinto(){
-	char nmArq[20]="labirinto.txt";
+Labirinto* carrega_labirinto(char* nmArq){
+
 	int linhas, colunas;
 	FILE* file = fopen(nmArq,"r");
 	fscanf(file,"%d %d\n",&linhas,&colunas);
@@ -160,7 +160,9 @@ void libera_labirinto(Labirinto *lab){
 
 int main(int argc, char const *argv[])
 {
-	Labirinto* lab = carrega_labirinto();
+	char nmArq[50];
+	scanf("%s",nmArq);
+	Labirinto* lab = carrega_labirinto(nmArq);
 	Posicao* init = coordenada_inicial(lab);
 	FILE*file = fopen("saida.txt","w");
 	imprime_labirinto(lab,file);
